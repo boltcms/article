@@ -27,6 +27,9 @@
         "entrypoint": "Bolt\\Article\\Extension",
         "screenshots": [
             "screenshots/article.png"
-        ]
-    }
+        ],
+        "branch-alias": {
+            "dev-master": "2.x-dev"
+        }
+    },
 }
