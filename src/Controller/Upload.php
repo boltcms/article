@@ -46,7 +46,7 @@ class Upload implements AsyncZoneInterface
         $this->config = $config;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->textExtension = $textExtension;
-        $this->request = $requestStack->getCurrentRequest();
+        $this->requestStack = $requestStack;
         $this->articleConfig = $articleConfig;
     }
 
@@ -77,8 +77,8 @@ class Upload implements AsyncZoneInterface
             ], Response::HTTP_FORBIDDEN);
         }
 
-        $locationName = $this->request->query->get('location', '');
-        $path = $this->request->query->get('path', '');
+        $locationName = $request->query->get('location', '');
+        $path = $request->query->get('path', '');
 
         $target = $this->config->getPath($locationName, true, $path);
 
